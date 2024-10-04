@@ -1,14 +1,10 @@
-import {promises as fs} from 'fs'
-import path from 'path'
+import fs from 'fs/promises'
+
 const read = async () => {
     // Write your code here 
-    const fileName = 'fileToRead.txt'
-    const foldername = 'files'
-    const filePath = path.join(foldername, fileName)
     try{
-        await fs.access(filePath)
-        const outcome = await fs.readFile(filePath, 'utf8')
-        console.log(outcome)
+        const outcome = await fs.readFile("./src/fs/files/fileToRead.txt");
+        console.log(outcome.toString())
     }catch(err){
       console.error('FS operation failed')
     }
