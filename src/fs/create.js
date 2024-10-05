@@ -8,7 +8,7 @@ const create = async () => {
     }catch(err) {
         if(err.code === 'ENOENT'){
             await fs.writeFile(filePath, 'I am fresh and young')
-            console.log('File created successfully: fresh.txt');         
+            console.log('File created successfully: fresh.txt');
         }else{
             console.error('FS operation failed', err);
             
